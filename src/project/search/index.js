@@ -9,7 +9,7 @@ function Search() {
   const [recipes, setRecipes] = useState([]);
   const fetchRecipes = async () => {
     const recipes = await client.findRecipes(searchTerm, 25);
-    setRecipes(recipes.results);
+    setRecipes(recipes);
   };
   useEffect(() => {
     fetchRecipes();
@@ -20,7 +20,7 @@ function Search() {
       <div className="search-results">
         <h3>Results for {searchTerm}</h3>
         <div className="d-flex flex-row flex-wrap">
-        {recipes.map((recipe) => (
+        {recipes?.map((recipe) => (
           <Link key={recipe.id} to={`/project/recipe/${recipe.id}`} className="tex">
             <div className="p-2">
                 <div className="card wd-card">
