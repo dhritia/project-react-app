@@ -1,0 +1,26 @@
+.page {
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 10px;
+  margin-bottom:10px;
+  font-family:Georgia, Times, 'Times New Roman', serif;
+}
+.steps {
+  font-style: italic;
+}
+.input {
+  display: inline-block !important;
+}
+.btn-secondary {
+  display: inline-block !important;
+}
+.tex {
+  display: inline-block;
+  text-decoration: none;
+}
+.tex h5 {
+  color: rgb(57, 57, 57);
+}
+.tex h4 {
+  color: rgb(107, 54, 106);
+}

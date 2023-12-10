@@ -1,0 +1,29 @@
+.input-field {
+  width: 30%;
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family:Georgia, Times, 'Times New Roman', serif;
+}
+.input-items {
+  margin: 20px;
+  vertical-align: middle;
+}
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+  background-color: rgb(107, 54, 106) !important;
+  color: white;
+  margin: 20px;
+}
+.error-message {
+  color: red;
+  margin: 20px;
+}
+.b-text {
+  text-decoration: none;
+  color: rgb(107, 54, 106);
+  font-family:Georgia, Times, 'Times New Roman', serif;
+}

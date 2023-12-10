@@ -1,0 +1,21 @@
+.wd-card {
+  width: 250px;
+  text-decoration: none;
+  height: 400px;
+  margin:5px;
+  font-family:Georgia, Times, 'Times New Roman', serif;
+}
+.search-results {
+  margin: 30px;
+  font-family:Georgia, Times, 'Times New Roman', serif;
+}
+.wd-img {
+  width: 250px;
+  height: 200px;
+}
+.wd-card div h5 {
+  color: rgb(84, 43, 84)
+}
+.tex {
+  text-decoration: none;
+}

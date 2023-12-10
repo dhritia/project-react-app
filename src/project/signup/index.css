@@ -1,0 +1,42 @@
+.input-field {
+  width: 30%;
+  margin-top: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family:Georgia, Times, 'Times New Roman', serif;
+}
+.input-items {
+  margin: 20px;
+  vertical-align: middle;
+  font-family:Georgia, Times, 'Times New Roman', serif;
+}
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+  background-color: rgb(107, 54, 106) !important;
+  color: white;
+  margin: 20px;
+}
+.error-message {
+  color: red;
+  margin: 20px;
+  font-family:Georgia, Times, 'Times New Roman', serif;
+}
+.b-text {
+  text-decoration: none;
+  color: rgb(107, 54, 106);
+  font-family:Georgia, Times, 'Times New Roman', serif;
+}
+.form-control {
+  display: inline-block !important;
+}
+.block1 {
+  margin-right:9px;
+  width:48%;
+}
+.block2 {
+  margin-left:7px;
+  width:48%;
+}
