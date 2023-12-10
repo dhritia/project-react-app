@@ -141,7 +141,7 @@ function Profile() {
           <div>
             <ul className="list-group list-group-flush">
             {following?.map(f => (
-              <Link to={`/project/profile/${f.username}`}>
+              <Link to={`/project/profile/${f.username2}`}>
                 <li className="list-group-item">
                   {f.username2}
                 </li>
