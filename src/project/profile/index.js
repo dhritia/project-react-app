@@ -31,7 +31,12 @@ function Profile() {
   const fetchAccount = async () => {
     const account = await client.account();
     setAccount(account);
-    findFollower();
+    if (username !== "") {
+      const follow = await client.findFollower(account.username+username);
+      if (follow?.length !== 0) {
+        setFollow(follow);
+      }
+    }
     console.log(account);
     const response = await client.findComments(account.username);
       console.log(response);
@@ -40,13 +45,6 @@ function Profile() {
   const signout = async () => {
     await client.signout();
     navigate("/project/home");
-  };
-  const findFollower = async () => {
-    if (account !== null && username !== null) {
-      console.log("hi");
-      const follow = await client.findFollower(account.username+username);
-      setFollow(follow);
-    }
   };
   const followUser = async () => {
     const response = await client.addFollower({followID: (account.username+newaccount.username), 
@@ -108,10 +106,10 @@ function Profile() {
       <div>
         <h1 className="align" style={{display: "inline-block",}}>{newaccount.firstname} {newaccount.lastname}</h1>
         <h2 style={{display: "inline-block", color: "gray"}}>({newaccount.role})</h2>
-        {account !== null && follow?.username1 !== "" && (
+        {account !== null && follow?.username2 !== "" && (
           <button className="btn btn-danger float-end" onClick={unfollow}>Unfollow</button>
         )}
-        {account !== null && follow?.username1 === "" && (
+        {account !== null && follow?.username2 === "" && (
           <button className="btn btn-primary float-end" onClick={followUser}>Follow</button>
         )}
         <div>
