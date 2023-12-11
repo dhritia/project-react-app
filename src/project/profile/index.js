@@ -32,10 +32,13 @@ function Profile() {
   const fetchAccount = async () => {
     const account = await client.account();
     setAccount(account);
-    if (username !== "") {
-      const follow = await client.findFollower(account.username+username);
-      if (follow?.length !== 0) {
-        setFollow(follow);
+    if (username) {
+      const follo = await client.findFollower(account.username+username);
+      if (follo) {
+        setFollow(follo);
+      }
+      else {
+        setFollow({username1:"", username2:""});
       }
     }
     console.log(account);
@@ -246,7 +249,12 @@ function Profile() {
       )}
       {comments?.length === 0 && !username && (
         <div>
-          <h2>No reviews yet</h2>
+          <h4>No reviews yet</h4>
+        </div>
+      )}
+      {ncomments?.length === 0 && username && (
+        <div>
+          <h4>No reviews yet</h4>
         </div>
       )}
     </div>
