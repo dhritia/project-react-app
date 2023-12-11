@@ -107,10 +107,10 @@ function Profile() {
       <div>
         <h1 className="align" style={{display: "inline-block",}}>{newaccount.firstname} {newaccount.lastname}</h1>
         <h2 style={{display: "inline-block", color: "gray"}}>({newaccount.role})</h2>
-        {account !== null && follow?.username2 !== "" && (
+        {account && follow?.username2 !== "" && (
           <button className="btn btn-danger float-end" onClick={unfollow}>Unfollow</button>
         )}
-        {account !== null && follow?.username2 === "" && (
+        {account && follow?.username2 === "" && (
           <button className="btn btn-primary float-end" onClick={followUser}>Follow</button>
         )}
         <div>
@@ -244,7 +244,7 @@ function Profile() {
           </div>
       </div>
       )}
-      {comments?.length === 0 && (
+      {comments?.length === 0 && !username && (
         <div>
           <h2>No reviews yet</h2>
         </div>
