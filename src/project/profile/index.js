@@ -38,9 +38,11 @@ function Profile() {
       }
     }
     console.log(account);
-    const response = await client.findComments(account.username);
+    if (username === "") {
+      const response = await client.findComments(account.username);
       console.log(response);
       setComments(response);
+    }
   };
   const signout = async () => {
     await client.signout();
