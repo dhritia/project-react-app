@@ -73,14 +73,12 @@ function Home() {
           <h4>Recipes to try this holiday season</h4>
           {crism?.map(recipe => (
             <Link key={recipe.id} to={`/project/recipe/${recipe.id}`} className="tex">
-              <div className="p-2">
                 <div className="card wd-card">
                     <img src={recipe.image} class="card-img-top wd-img" alt="..."/>
                     <div class="card-body">
                         <h5 class="card-title">{recipe.title}</h5>
                     </div>
                 </div>
-            </div>
             </Link>
           ))}
         </div>
