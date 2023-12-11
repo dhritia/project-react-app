@@ -13,6 +13,7 @@ function Profile() {
   const [followers, setFollowers] = useState(null);
   const [following, setFollowing] = useState(null);
   const [comments, setComments] = useState(null);
+  const [ncomments, setnComments] = useState(null);
   const [showModal, setShow] = useState(false);
   const [showModalF, setShowF] = useState(false);
   const handleClose = () => setShow(false);
@@ -26,7 +27,7 @@ function Profile() {
     newsetAccount(newaccount);
     const response = await client.findComments(newaccount.username);
     console.log(response);
-    setComments(response);
+    setnComments(response);
   };
   const fetchAccount = async () => {
     const account = await client.account();
@@ -38,11 +39,9 @@ function Profile() {
       }
     }
     console.log(account);
-    if (username === "") {
-      const response = await client.findComments(account.username);
+    const response = await client.findComments(account.username);
       console.log(response);
       setComments(response);
-    }
   };
   const signout = async () => {
     await client.signout();
@@ -162,7 +161,7 @@ function Profile() {
         <div>
           <h3>Reviews</h3>
           <ul>
-        {comments?.map(c => (
+        {ncomments?.map(c => (
           <Link className="b-text" to={`/project/recipe/${c.recipeID}`}>
             <li>
               <h4>{c.title}</h4>
