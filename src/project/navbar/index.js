@@ -45,11 +45,13 @@ function Navbar() {
           <li className="m-4">
             <button className="btn btn-light my-2 my-sm-0 m-4" type="submit" onClick={searchRecipe}>Search</button>
           </li>
+          {account && (
           <li className="nav-item m-4">
             <Link to={`/project/bookmarks`}>
             <a className="nav-link">Bookmarks</a>
             </Link>
           </li>
+          )}
           {account && (
           <li className="nav-item dropdown">
             <Dropdown className="m-0">
