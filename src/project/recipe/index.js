@@ -33,7 +33,12 @@ function Recipe() {
     }
   };
   const addComment = async () => {
+    if (account.role !== "Chef) {
     const response = await localclient.addComment({username: account.username, recipeID: recipeId, comment: comment, commentID: (account.username+recipeId), role: account.role, title: recipe.title});
+  }
+  else {
+    const response = await localclient.addComment({username: account.username, recipeID: recipeId, comment: comment, commentID: (account.username+recipeId), role: account.role+" at "+account.workplace, title: recipe.title});
+  }
     fetchComments();
   };
   const deleteComment = async (id) => {
@@ -138,10 +143,7 @@ function Recipe() {
             {comments?.map(c => (
                 <li className="list-group-item tex">
                     <Link to={`/project/profile/${c.username}`} className="tex">
-              {c?.role !== "Chef" && (
-                    <h4>{c.username} ({c.role})</h4> )}
-{c?.role === "Chef" && (
-                    <h4>{c.username} ({c.role} at {c.workplace})</h4> )}
+                    <h4>{c.username} ({c.role})</h4> 
                     </Link>
                     <h5>{c.comment}</h5>
                     {(account.role === "Moderator" || account.username === c.username) && (
