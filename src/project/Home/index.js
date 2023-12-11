@@ -23,7 +23,7 @@ function Home() {
       setMessage(`Top ${account.favCuisine} recipes`);
     }
     else if (account?.role === "Chef") {
-      const recipes = await client.findRecipes("Professional", 3);
+      const recipes = await client.findRecipes("Chef", 3);
       setRecipes(recipes);
       setMessage(`Top dishes to try for professionals`);
     }
