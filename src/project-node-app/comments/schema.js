@@ -4,10 +4,7 @@ const userSchema = new mongoose.Schema({
     recipeID: Number,
     comment: String,
     commentID: String,
-    role: {
-        type: String,
-        enum: ["User", "Chef", "Moderator"],
-        default: "User" },
+    role: String,
     title: String,
   },
   { collection: "comments" });
