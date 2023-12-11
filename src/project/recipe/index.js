@@ -138,7 +138,10 @@ function Recipe() {
             {comments?.map(c => (
                 <li className="list-group-item tex">
                     <Link to={`/project/profile/${c.username}`} className="tex">
-                    <h4>{c.username} ({c.role})</h4>
+              {c?.role !== "Chef" && (
+                    <h4>{c.username} ({c.role})</h4> )}
+{c?.role === "Chef" && (
+                    <h4>{c.username} ({c.role} at {c.workplace})</h4> )}
                     </Link>
                     <h5>{c.comment}</h5>
                     {(account.role === "Moderator" || account.username === c.username) && (
