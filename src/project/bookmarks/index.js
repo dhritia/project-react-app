@@ -36,8 +36,11 @@ function Bookmarks() {
           ))}
         </div>
       )}
-      {bookmarks?.length === 0 && (
+      {bookmarks?.length === 0 && account && (
         <h2>No bookmarks</h2>
+      )}
+      {bookmarks?.length === 0 && !account && (
+        <h3>To view bookmarks, please <Link to={`/project/login`} className="b-text">log in</Link></h3>
       )}
       </div>
     </div>
