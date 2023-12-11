@@ -33,11 +33,11 @@ function Recipe() {
     }
   };
   const addComment = async () => {
-    if (account.role !== "Chef") {
+    if (account?.role !== "Chef") {
     const response = await localclient.addComment({username: account.username, recipeID: recipeId, comment: comment, commentID: (account.username+recipeId), role: account.role, title: recipe.title});
   }
   else {
-    const response = await localclient.addComment({username: account.username, recipeID: recipeId, comment: comment, commentID: (account.username+recipeId), role: account.role+" at "+account.workplace, title: recipe.title});
+    const response = await localclient.addComment({username: account.username, recipeID: recipeId, comment: comment, commentID: (account.username+recipeId), role: (account.role+" at "+account.workplace), title: recipe.title});
   }
     fetchComments();
   };
